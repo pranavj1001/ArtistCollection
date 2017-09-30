@@ -16,7 +16,7 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
   // sortOrder[sortProperty] = 1;
 
   const getListOfArtists = Artist
-    .find({})
+    .find(buildQuery(criteria))
     .sort({ [sortProperty]: 1 }) // at run time, look at sortProperty and add 1
     .skip(offset)
     .limit(limit);
@@ -30,4 +30,24 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
         limit
       };
     });
+};
+
+const buildQuery = (criteria) => {
+  const query = {};
+
+  if (criteria.age) {
+    query.age = {
+      $gte: criteria.age.min,
+      $lte: criteria.age.max
+    };
+  }
+
+  if (criteria.yearsActive) {
+    query.yearsActive = {
+      $gte: criteria.yearsActive.min,
+      $lte: criteria.yearsActive.max
+    };
+  }
+
+  return query;
 };
