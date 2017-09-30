@@ -20,8 +20,6 @@ It has over 15K fake data records to play and experiment with.
 
 5. Batch Updates - update multiple records at once.
 
-**Note**: The whole boilerplate for the electron application has been provided by Stephen Grider's [UpStarMusic Repo](https://github.com/StephenGrider/UpStarMusic)
-
 ### To get started
 
 1. Download or clone this repo
@@ -35,6 +33,8 @@ It has over 15K fake data records to play and experiment with.
 4. Then type this command to run the application
 
 ```npm start```
+
+**Note**: The above mentioned guide has been tried and tested on mac. However, the same guide should also work on windows machines.
 
 ### Queries?
 
